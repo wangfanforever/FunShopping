@@ -29,6 +29,11 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(CommonBillsBean response) {
 
                 Log.i("--2323----", response.toString());
+                Log.i("--2323----", response.toString());
+                Log.i("--2323----", response.toString());
+                Log.i("--2323----", response.toString());
+                Log.i("--2323----", response.toString());
+
             }
         });
     }
