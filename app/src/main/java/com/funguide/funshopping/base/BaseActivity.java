@@ -8,7 +8,6 @@ import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -32,6 +31,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     private Button actionBarRightBtn;
     private TextView actionBarTitle;
     private LinearLayout contentFatherLly;
+    protected LinearLayout bottomMenuLly;
 
 
     @Override
@@ -48,6 +48,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         actionBarRlt = (RelativeLayout) findViewById(R.id.action_bar_rlt);
 
         contentFatherLly = (LinearLayout) findViewById(R.id.content_father_lly);
+        bottomMenuLly = (LinearLayout) findViewById(R.id.bottom_menu_lly);
 //        fillLayoutView();   不推荐自动添加布局
     }
 
@@ -181,6 +182,10 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     //设置左侧按钮的文本
     protected void setActionBarRightBtnText(String text) {
         actionBarRightBtn.setText(text);
+    }
+
+    public void setBottomLayoutVisible() {
+        bottomMenuLly.setVisibility(View.VISIBLE);
     }
 
     //双击退出
