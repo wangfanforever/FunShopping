@@ -27,7 +27,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/icon_jingxuan_en"
+            android:drawableTop="@drawable/icon_first_bottom_menu_en"
             android:text="首页"
             android:textColor="@color/tab_selected_red" />
 
@@ -37,7 +37,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/icon_taojin_un"
+            android:drawableTop="@drawable/icon_second_bottom_menu_un"
             android:text="附近"
             android:textColor="@color/tab_unselected_gray" />
 
@@ -54,7 +54,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/icon_shenghuo_un"
+            android:drawableTop="@drawable/icon_third_bottom_menu_un"
             android:text="任务"
             android:textColor="@color/tab_unselected_gray" />
 
@@ -64,7 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
-            android:drawableTop="@drawable/icon_wode_un"
+            android:drawableTop="@drawable/icon_fourth_bottom_menu_un"
             android:text="我的"
             android:textColor="@color/tab_unselected_gray" />
     </LinearLayout>

@@ -1,5 +1,6 @@
 package com.funguide.funshopping.base;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,7 +9,7 @@ import android.widget.RelativeLayout;
 
 import com.funguide.funshopping.R;
 
-public class FunShoppingMainActivity extends BaseActivity {
+public class FunShoppingMainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener{
 
     private static final int INIT_TAB_ID = -1;
     protected int currentId = INIT_TAB_ID;
@@ -70,6 +71,9 @@ public class FunShoppingMainActivity extends BaseActivity {
             case R.id.btn_fourth_menu:
                 setCurrentBottomView(R.id.btn_fourth_menu);
                 break;
+            case R.id.img_pathmenu_action:  // 底部二维码扫描
+
+                break;
         }
         super.onClick(v);
     }
@@ -103,41 +107,41 @@ public class FunShoppingMainActivity extends BaseActivity {
 
     private void fourthBottomMenuIsClicked() {
         btnFourthMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_wode_en, 0, 0);
+                R.drawable.icon_fourth_bottom_menu_en, 0, 0);
         btnFourthMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
     }
 
     private void thirdBottomMenuIsClicked() {
         btnThirdMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_shenghuo_en, 0, 0);
+                R.drawable.icon_third_bottom_menu_en, 0, 0);
         btnThirdMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
     }
 
     private void secondBottomMenuIsClicked() {
         btnSecondMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_taojin_en, 0, 0);
+                R.drawable.icon_second_bottom_menu_en, 0, 0);
         btnSecondMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
     }
 
     private void firstBottomMenuIsClicked() {
         btnFirstMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_jingxuan_en, 0, 0);
+                R.drawable.icon_first_bottom_menu_en, 0, 0);
         btnFirstMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
     }
 
     private void resetBottomMenuState() {
         btnFirstMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_jingxuan_un, 0, 0);
+                R.drawable.icon_first_bottom_menu_un, 0, 0);
         btnSecondMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_taojin_un, 0, 0);
+                R.drawable.icon_second_bottom_menu_un, 0, 0);
         btnThirdMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_shenghuo_un, 0, 0);
+                R.drawable.icon_third_bottom_menu_un, 0, 0);
         btnFourthMenu.setCompoundDrawablesWithIntrinsicBounds(0,
-                R.drawable.icon_wode_un, 0, 0);
+                R.drawable.icon_fourth_bottom_menu_un, 0, 0);
         btnFirstMenu.setTextColor(getResources().getColor(
                 R.color.tab_unselected_gray));
         btnSecondMenu.setTextColor(getResources().getColor(
@@ -147,4 +151,21 @@ public class FunShoppingMainActivity extends BaseActivity {
         btnFourthMenu.setTextColor(getResources().getColor(
                 R.color.tab_unselected_gray));
     }
+
+    //--------------与fragment 交互 start
+    @Override
+    public void onFragmentInteraction(Uri uri) {
+
+    }
+
+    @Override
+    public void onFragmentInteraction(String message) {
+
+    }
+
+    @Override
+    public void onFragmentChildViewOnClick(View view) {
+
+    }
+    //--------------与fragment 交互 end
 }
