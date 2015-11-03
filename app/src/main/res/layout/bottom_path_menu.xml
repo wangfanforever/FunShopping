@@ -24,5 +24,13 @@
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true"
             android:src="@drawable/floatingmenu_action_saoyisao"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_alignBottom="@id/img_pathmenu_action"
+            android:textSize="10sp"
+            android:layout_marginBottom="5dp"
+            android:text="扫码"/>
     </RelativeLayout>
 </RelativeLayout>

@@ -10,6 +10,9 @@ import com.funguide.funshopping.R;
 
 public class FunShoppingMainActivity extends BaseActivity {
 
+    private static final int INIT_TAB_ID = -1;
+    protected int currentId = INIT_TAB_ID;
+
     public Button btnFirstMenu;
     public Button btnSecondMenu;
     public Button btnThirdMenu;
@@ -19,7 +22,6 @@ public class FunShoppingMainActivity extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentLayout(R.layout.activity_main);
-
         initBottomMenuView();
         addBottomPathMenu(getBaseLayout());
     }
@@ -50,4 +52,99 @@ public class FunShoppingMainActivity extends BaseActivity {
         container.addView(view, rlps);
     }
 
+    @Override
+    public void onClick(View v) {
+        if (v.getId() == currentId)
+            return;
+        checkMessageNews();
+        switch (v.getId()) {
+            case R.id.btn_first_menu:
+                setCurrentBottomView(R.id.btn_first_menu);
+                break;
+            case R.id.btn_second_menu:
+                setCurrentBottomView(R.id.btn_second_menu);
+                break;
+            case R.id.btn_third_menu:
+                setCurrentBottomView(R.id.btn_third_menu);
+                break;
+            case R.id.btn_fourth_menu:
+                setCurrentBottomView(R.id.btn_fourth_menu);
+                break;
+        }
+        super.onClick(v);
+    }
+
+    private void checkMessageNews() {
+
+    }
+
+    public void setCurrentBottomView(int id) {
+        currentId = id;
+        resetBottomMenuState();
+        switch (id) {
+            case R.id.btn_first_menu:
+                firstBottomMenuIsClicked();
+                break;
+            case R.id.btn_second_menu:
+                secondBottomMenuIsClicked();
+                break;
+            case R.id.btn_third_menu:
+                thirdBottomMenuIsClicked();
+
+                break;
+            case R.id.btn_fourth_menu:
+                fourthBottomMenuIsClicked();
+                break;
+            default:
+                firstBottomMenuIsClicked();
+                break;
+        }
+    }
+
+    private void fourthBottomMenuIsClicked() {
+        btnFourthMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_wode_en, 0, 0);
+        btnFourthMenu.setTextColor(this.getResources().getColor(
+                R.color.tab_selected_red));
+    }
+
+    private void thirdBottomMenuIsClicked() {
+        btnThirdMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_shenghuo_en, 0, 0);
+        btnThirdMenu.setTextColor(this.getResources().getColor(
+                R.color.tab_selected_red));
+    }
+
+    private void secondBottomMenuIsClicked() {
+        btnSecondMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_taojin_en, 0, 0);
+        btnSecondMenu.setTextColor(this.getResources().getColor(
+                R.color.tab_selected_red));
+    }
+
+    private void firstBottomMenuIsClicked() {
+        btnFirstMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_jingxuan_en, 0, 0);
+        btnFirstMenu.setTextColor(this.getResources().getColor(
+                R.color.tab_selected_red));
+    }
+
+    private void resetBottomMenuState() {
+        btnFirstMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_jingxuan_un, 0, 0);
+        btnSecondMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_taojin_un, 0, 0);
+        btnThirdMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_shenghuo_un, 0, 0);
+        btnFourthMenu.setCompoundDrawablesWithIntrinsicBounds(0,
+                R.drawable.icon_wode_un, 0, 0);
+        btnFirstMenu.setTextColor(getResources().getColor(
+                R.color.tab_unselected_gray));
+        btnSecondMenu.setTextColor(getResources().getColor(
+                R.color.tab_unselected_gray));
+        btnThirdMenu.setTextColor(getResources().getColor(
+                R.color.tab_unselected_gray));
+        btnFourthMenu.setTextColor(getResources().getColor(
+                R.color.tab_unselected_gray));
+    }
 }
