@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+
 
 /**
  * Created by yangshuai on 2015/10/14 0014 16:58.
@@ -40,6 +42,7 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+        Fresco.initialize(getActivity());
     }
 
     @Override

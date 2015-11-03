@@ -4,7 +4,8 @@ import android.content.Context;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
-import android.widget.ImageView;
+
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.ArrayList;
 
@@ -14,29 +15,16 @@ import java.util.ArrayList;
 public class FunAdViewPagerAdpter extends PagerAdapter {
 
     private Context context;
-    private ArrayList<ImageView> picViews;
-    private int mChildeCount = 0;
+    private ArrayList<SimpleDraweeView> picViews;
 
-    public FunAdViewPagerAdpter( Context context, ArrayList<ImageView> picViews) {
+    public FunAdViewPagerAdpter( Context context, ArrayList<SimpleDraweeView> picViews) {
         this.picViews = picViews;
         this.context = context;
     }
 
     @Override
     public void notifyDataSetChanged() {
-        mChildeCount = getCount();
         super.notifyDataSetChanged();
-
-    }
-
-    @Override
-    public int getItemPosition(Object object) {
-
-        if (mChildeCount > 0) {
-            mChildeCount --;
-            return POSITION_NONE;
-        }
-        return super.getItemPosition(object);
 
     }
 

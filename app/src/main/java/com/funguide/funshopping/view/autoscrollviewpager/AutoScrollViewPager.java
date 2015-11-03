@@ -13,6 +13,18 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.animation.Interpolator;
 
+/*
+        startAutoScroll() 启动自动滚动
+        stopAutoScroll() 停止自动滚动
+        setInterval(long) 设置自动滚动的间隔时间，单位为毫秒
+        setDirection(int) 设置自动滚动的方向，默认向右
+        setCycle(boolean) 是否自动循环轮播，默认为true
+        setScrollDurationFactor(double) 设置ViewPager滑动动画间隔时间的倍率，达到减慢动画或改变动画速度的效果
+        setStopScrollWhenTouch(boolean) 当手指碰到ViewPager时是否停止自动滚动，默认为true
+        setSlideBorderMode(int) 滑动到第一个或最后一个Item的处理方式，支持没有任何操作、轮播以及传递到父View三种模式
+        setBorderAnimation(boolean) 设置循环滚动时滑动到从边缘滚动到下一个是否需要动画，默认为true
+*/
+
 /**
  * Auto Scroll View Pager
  * <ul>
@@ -59,7 +71,7 @@ public class AutoScrollViewPager extends ViewPager {
     /** whether animating when auto scroll at the last or first item **/
     private boolean                isBorderAnimation           = true;
     /** scroll factor for auto scroll animation, default is 1.0 **/
-    private double                 autoScrollFactor            = 1.0;
+    private double                 autoScrollFactor            = 1.5;
     /** scroll factor for swipe scroll animation, default is 1.0 **/
     private double                 swipeScrollFactor           = 1.0;
 
