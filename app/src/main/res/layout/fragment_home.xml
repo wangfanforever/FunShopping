@@ -1,10 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.funguide.funshopping.view.FunScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.funguide.funshopping.module.home.HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView android:layout_width="match_parent" android:layout_height="match_parent"
-        android:text="home_fragment" />
+    <LinearLayout
+        android:id="@+id/home_container_lly"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-</FrameLayout>
+        <com.funguide.funshopping.view.autoscrollviewpager.AutoScrollViewPager
+            android:id="@+id/home_ad_viewpager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </com.funguide.funshopping.view.autoscrollviewpager.AutoScrollViewPager>
+
+    </LinearLayout>
+
+</com.funguide.funshopping.view.FunScrollView>
