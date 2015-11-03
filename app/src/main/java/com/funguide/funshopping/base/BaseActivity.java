@@ -31,7 +31,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     private Button actionBarRightBtn;
     private TextView actionBarTitle;
     private LinearLayout contentFatherLly;
-    protected LinearLayout bottomMenuLly;
+    private LinearLayout bottomMenuLly;
 
 
     @Override
@@ -186,6 +186,18 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
 
     public void setBottomLayoutVisible() {
         bottomMenuLly.setVisibility(View.VISIBLE);
+    }
+
+    public void addBottomView(int resId) {
+        View bottomView = LayoutInflater.from(this).inflate(resId, null);
+        bottomMenuLly.removeAllViews();
+        bottomMenuLly.addView(bottomView);
+    }
+
+    public void addBottomView(View view) {
+        View bottomView = view;
+        bottomMenuLly.removeAllViews();
+        bottomMenuLly.addView(bottomView);
     }
 
     //双击退出
