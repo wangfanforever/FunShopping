@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/base_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
@@ -39,7 +40,6 @@
     </RelativeLayout>
 
     <LinearLayout
-        android:layout_below="@+id/content_father_lly"
         android:id="@+id/bottom_menu_lly"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
@@ -49,6 +49,7 @@
 
     <LinearLayout
         android:layout_below="@+id/action_bar_rlt"
+        android:layout_above="@id/bottom_menu_lly"
         android:id="@+id/content_father_lly"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

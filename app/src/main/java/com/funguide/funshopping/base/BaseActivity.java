@@ -26,6 +26,7 @@ import java.util.regex.Pattern;
  */
 public class BaseActivity extends FragmentActivity implements View.OnClickListener {
 
+    private RelativeLayout baseLayout;
     private RelativeLayout actionBarRlt;
     private Button actionBarLeftBtn;
     private Button actionBarRightBtn;
@@ -41,6 +42,8 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         setContentView(R.layout.activity_base);
 
         SharedPreferenceUtil.init(this);
+
+        baseLayout = (RelativeLayout) findViewById(R.id.base_layout);
 
         actionBarLeftBtn = (Button) findViewById(R.id.actionBar_left_btn);
         actionBarRightBtn = (Button) findViewById(R.id.actionBar_right_btn);
@@ -132,6 +135,10 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         }
     }
 
+    protected RelativeLayout getBaseLayout(){
+        return baseLayout;
+    }
+
     protected void showActionBar() {
         actionBarRlt.setVisibility(View.VISIBLE);
     }
@@ -191,13 +198,17 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
     public void addBottomView(int resId) {
         View bottomView = LayoutInflater.from(this).inflate(resId, null);
         bottomMenuLly.removeAllViews();
-        bottomMenuLly.addView(bottomView);
+        bottomMenuLly.addView(bottomView, new ViewGroup.LayoutParams(
+                        ViewGroup.LayoutParams.MATCH_PARENT,
+                        ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     public void addBottomView(View view) {
         View bottomView = view;
         bottomMenuLly.removeAllViews();
-        bottomMenuLly.addView(bottomView);
+        bottomMenuLly.addView(bottomView, new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT,
+                ViewGroup.LayoutParams.MATCH_PARENT));
     }
 
     //双击退出

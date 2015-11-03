@@ -30,5 +30,17 @@
     <color name="emerald">#ffa6d9b5</color>
     <color name="bluegrass">#ff96c9b5</color>
     <color name="turquoise">#ff86b9b5</color>
-    <color name="slate">#ff76a9b5</color>
+    <color name="slate">#ff76a9b5</color>.
+
+    <!-- tab背景颜色 -->
+    <color name="tab_bg">#5feeeeee</color>
+    <!-- tab顶部分割线颜色 -->
+    <color name="tab_divider">#d9d9d9</color>
+    <!-- tab栏选中字体颜色 -->
+    <color name="tab_selected_red">#eb1212</color>
+    <!-- tab栏未选中字体颜色 -->
+    <color name="tab_unselected_gray">#5f606d</color>
+    <color name="find_gv_bolder">#cccccc</color>
+    <color name="txt_main_grid_desc">#202020</color>
+    <color name="bg_main_grid_div">#e5e5e5</color>
 </resources>
