@@ -36,7 +36,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+//        getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_base);
 
@@ -183,21 +183,6 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         actionBarRightBtn.setText(text);
     }
 
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()) {
-            case R.id.actionBar_left_btn:
-                if (this instanceof FunShoppingMainActivity) {
-                    exit();
-                } else {
-                    finish();
-                }
-
-                break;
-        }
-    }
-
     //双击退出
     private long exitTime = -1;
 
@@ -234,4 +219,8 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         toast.show();
     }
 
+    @Override
+    public void onClick(View v) {
+
+    }
 }
