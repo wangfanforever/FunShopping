@@ -93,4 +93,36 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
         public void onFragmentChildViewOnClick(View view);
     }
 
+
+    private boolean isFragmentSelected;
+    private boolean isFirst = true;
+    /**
+     * 当Fragment选中时
+     */
+    public void setFragmentSeleted(boolean selected) {
+        isFragmentSelected = selected;
+        if (isFragmentSelected) {
+            if (isFirst) {
+                onFragmentSeleted(true);
+                isFirst = false;
+            } else {
+                onFragmentSeleted(false);
+            }
+
+        } else {
+            onFragmentUnSeleted();
+        }
+
+    }
+
+    /**
+     * 当Fragment切换为选中时
+     */
+    protected abstract void onFragmentSeleted(boolean isFirst);
+
+    /**
+     * 当Fragment切换为未选中时
+     */
+    protected abstract void onFragmentUnSeleted();
+
 }

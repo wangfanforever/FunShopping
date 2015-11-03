@@ -2,29 +2,50 @@ package com.funguide.funshopping.base;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RelativeLayout;
 
 import com.funguide.funshopping.R;
+import com.funguide.funshopping.module.home.HomeFragment;
 
 public class FunShoppingMainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener{
 
     private static final int INIT_TAB_ID = -1;
-    protected int currentId = INIT_TAB_ID;
+    private static final String KEY_BUNDLE_ID = "key_bundle_id";
+    protected int currentFragmentId = INIT_TAB_ID;
 
     public Button btnFirstMenu;
     public Button btnSecondMenu;
     public Button btnThirdMenu;
     public Button btnFourthMenu;
 
+    /* framgent */
+    private BaseFragment selectedFragment;
+    private HomeFragment homeFragment;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentLayout(R.layout.activity_main);
+
+        if (savedInstanceState != null)
+            currentFragmentId = savedInstanceState.getInt(KEY_BUNDLE_ID, currentFragmentId);
         initBottomMenuView();
+        setCurrentBottomView(currentFragmentId);
         addBottomPathMenu(getBaseLayout());
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        if (outState != null){
+            if (currentFragmentId != INIT_TAB_ID){
+                outState.putInt(KEY_BUNDLE_ID, currentFragmentId);
+            }
+        }
     }
 
     private void initBottomMenuView() {
@@ -55,7 +76,7 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
 
     @Override
     public void onClick(View v) {
-        if (v.getId() == currentId)
+        if (v.getId() == currentFragmentId)
             return;
         checkMessageNews();
         switch (v.getId()) {
@@ -83,7 +104,7 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
     }
 
     public void setCurrentBottomView(int id) {
-        currentId = id;
+        currentFragmentId = id;
         resetBottomMenuState();
         switch (id) {
             case R.id.btn_first_menu:
@@ -131,6 +152,11 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
                 R.drawable.icon_first_bottom_menu_en, 0, 0);
         btnFirstMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
+        if (homeFragment == null){
+            homeFragment = HomeFragment.newInstance("main", "home");
+        }
+        setActionBarTitle("首页");
+        switchFragment(R.id.framgment_father_rly, selectedFragment, homeFragment, homeFragment.getClass().getSimpleName());
     }
 
     private void resetBottomMenuState() {
@@ -150,6 +176,31 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
                 R.color.tab_unselected_gray));
         btnFourthMenu.setTextColor(getResources().getColor(
                 R.color.tab_unselected_gray));
+    }
+
+    private void switchFragment(int id, BaseFragment from,
+                                BaseFragment to, String tag) {
+        FragmentManager manager = getSupportFragmentManager();
+        FragmentTransaction transaction = manager.beginTransaction();
+        if (from == null || !from.isAdded()) {
+            if (!to.isAdded()) {
+                transaction.add(id, to, tag).commit();
+            } else {
+                transaction.show(to).commit();
+            }
+        } else {
+            if (!to.isAdded()) {
+                from.setFragmentSeleted(false);
+                transaction.hide(from).add(id, to, tag).commit();
+                // 不要再首次add后立刻调用onFragmentSelected,首次add会走Fragment生命周期onResume,在onResume中会调用onFragmentSeleted
+                // to.onFragmentSeleted();
+            } else {
+                from.setFragmentSeleted(false);
+                transaction.hide(from).show(to).commit();
+                to.setFragmentSeleted(true);
+            }
+        }
+        selectedFragment = to;
     }
 
     //--------------与fragment 交互 start
