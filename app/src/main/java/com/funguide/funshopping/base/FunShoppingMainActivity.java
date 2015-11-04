@@ -30,7 +30,6 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentLayout(R.layout.activity_main);
 
         if (savedInstanceState != null)
             currentFragmentId = savedInstanceState.getInt(KEY_BUNDLE_ID, currentFragmentId);
@@ -156,7 +155,7 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
             homeFragment = HomeFragment.newInstance("main", "home");
         }
         setActionBarTitle("首页");
-        switchFragment(R.id.framgment_father_rly, selectedFragment, homeFragment, homeFragment.getClass().getSimpleName());
+        switchFragment(R.id.base_content_father_lly, selectedFragment, homeFragment, homeFragment.getClass().getSimpleName());
     }
 
     private void resetBottomMenuState() {
