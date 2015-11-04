@@ -15,10 +15,13 @@
 
         <Button
             android:id="@+id/actionBar_left_btn"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_alignParentLeft="true"
-            android:background="@drawable/temp_bar_left_btn_bg" />
+            android:padding="2.0dip"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/default_round_head" />
 
         <TextView
             android:id="@+id/actionBar_title_tv"
@@ -26,7 +29,8 @@
             android:layout_height="match_parent"
             android:layout_centerInParent="true"
             android:gravity="center"
-            android:textSize="20dp"
+            android:textSize="20sp"
+            android:textColor="@color/white"
             android:text="@string/app_name" />
 
 

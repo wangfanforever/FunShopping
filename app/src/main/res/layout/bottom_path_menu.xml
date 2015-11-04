@@ -31,6 +31,6 @@
             android:layout_alignBottom="@id/img_pathmenu_action"
             android:textSize="10sp"
             android:layout_marginBottom="5dp"
-            android:text="扫码"/>
+            />
     </RelativeLayout>
 </RelativeLayout>

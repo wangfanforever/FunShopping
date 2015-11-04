@@ -4,9 +4,9 @@
 
     <LinearLayout
         android:id="@+id/home_container_lly"
-        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
         <com.funguide.funshopping.view.autoscrollviewpager.AutoScrollViewPager
             android:id="@+id/home_ad_viewpager"
@@ -15,6 +15,26 @@
 
         </com.funguide.funshopping.view.autoscrollviewpager.AutoScrollViewPager>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+
+            android:orientation="vertical">
+
+            <com.funguide.funshopping.view.CategoryTabStrip
+                android:id="@+id/category_strip"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/top_category_height"
+                android:clipToPadding="false"
+                android:paddingLeft="6.0dip"
+                android:paddingRight="6.0dip" />
+            <android.support.v4.view.ViewPager android:id="@+id/view_pager"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+             />
+        </LinearLayout>
     </LinearLayout>
+
 
 </com.funguide.funshopping.view.FunScrollView>

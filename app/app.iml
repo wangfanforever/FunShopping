@@ -96,9 +96,15 @@
     <orderEntry type="library" exported="" name="fbcore-0.6.0" level="project" />
     <orderEntry type="library" exported="" name="okhttp-2.4.0" level="project" />
     <orderEntry type="library" exported="" name="drawee-0.6.0" level="project" />
+<<<<<<< Updated upstream
     <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
     <orderEntry type="library" exported="" name="okio-1.5.0" level="project" />
+=======
+    <orderEntry type="library" exported="" name="okio-1.5.0" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.2.4" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-21.0.3" level="project" />
+>>>>>>> Stashed changes
     <orderEntry type="library" exported="" name="support-v4-21.0.3" level="project" />
     <orderEntry type="library" exported="" name="imagepipeline-0.6.0" level="project" />
     <orderEntry type="library" exported="" name="fresco-0.6.0" level="project" />
