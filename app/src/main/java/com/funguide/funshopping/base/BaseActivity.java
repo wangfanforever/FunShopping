@@ -50,7 +50,7 @@ public class BaseActivity extends FragmentActivity implements View.OnClickListen
         actionBarTitle = (TextView) findViewById(R.id.actionBar_title_tv);
         actionBarRlt = (RelativeLayout) findViewById(R.id.action_bar_rlt);
 
-        contentFatherLly = (LinearLayout) findViewById(R.id.content_father_lly);
+        contentFatherLly = (LinearLayout) findViewById(R.id.base_content_father_lly);
         bottomMenuLly = (LinearLayout) findViewById(R.id.bottom_menu_lly);
 //        fillLayoutView();   不推荐自动添加布局
     }

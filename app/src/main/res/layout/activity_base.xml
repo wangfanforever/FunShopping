@@ -50,7 +50,7 @@
     <LinearLayout
         android:layout_below="@+id/action_bar_rlt"
         android:layout_above="@id/bottom_menu_lly"
-        android:id="@+id/content_father_lly"
+        android:id="@+id/base_content_father_lly"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical" />
