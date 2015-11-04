@@ -23,6 +23,7 @@ public class FunAdViewPagerAdpter extends PagerAdapter {
         this.picViews = picViews;
         this.context = context;
         mChildeCount = picViews.size();
+
     }
 
     @Override
