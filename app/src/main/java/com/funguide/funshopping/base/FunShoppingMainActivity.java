@@ -11,8 +11,9 @@ import android.widget.RelativeLayout;
 
 import com.funguide.funshopping.R;
 import com.funguide.funshopping.module.home.HomeFragment;
+import com.funguide.funshopping.module.home.MallFragment;
 
-public class FunShoppingMainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener{
+public class FunShoppingMainActivity extends BaseActivity implements BaseFragment.OnFragmentInteractionListener {
 
     private static final int INIT_TAB_ID = -1;
     private static final String KEY_BUNDLE_ID = "key_bundle_id";
@@ -26,6 +27,7 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
     /* framgent */
     private BaseFragment selectedFragment;
     private HomeFragment homeFragment;
+    private MallFragment mallFragment;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,8 +42,8 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
 
     @Override
     protected void onSaveInstanceState(Bundle outState) {
-        if (outState != null){
-            if (currentFragmentId != INIT_TAB_ID){
+        if (outState != null) {
+            if (currentFragmentId != INIT_TAB_ID) {
                 outState.putInt(KEY_BUNDLE_ID, currentFragmentId);
             }
         }
@@ -130,6 +132,11 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
                 R.drawable.icon_fourth_bottom_menu_en, 0, 0);
         btnFourthMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
+        if (mallFragment == null) {
+            mallFragment = MallFragment.newInstance("main", "mall");
+        }
+        setActionBarTitle("商城");
+        switchFragment(R.id.base_content_father_lly, selectedFragment, mallFragment, mallFragment.getClass().getSimpleName());
     }
 
     private void thirdBottomMenuIsClicked() {
@@ -151,7 +158,7 @@ public class FunShoppingMainActivity extends BaseActivity implements BaseFragmen
                 R.drawable.icon_first_bottom_menu_en, 0, 0);
         btnFirstMenu.setTextColor(this.getResources().getColor(
                 R.color.tab_selected_red));
-        if (homeFragment == null){
+        if (homeFragment == null) {
             homeFragment = HomeFragment.newInstance("main", "home");
         }
         setActionBarTitle("首页");

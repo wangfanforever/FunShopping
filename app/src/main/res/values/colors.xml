@@ -32,6 +32,11 @@
     <color name="turquoise">#ff86b9b5</color>
     <color name="slate">#ff76a9b5</color>.
 
+
+    <color name="mall_line">#fff47545</color>.
+    <color name="mall_text">#ffb6b6b6</color>.
+    <color name="mall_text_t">#fffb735e</color>.
+
     <!-- tab背景颜色 -->
     <color name="tab_bg">#5feeeeee</color>
     <!-- tab顶部分割线颜色 -->
