@@ -11,6 +11,5 @@ public class FunShopApplication extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        Fresco.initialize(getApplicationContext());
     }
 }
