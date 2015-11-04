@@ -3,10 +3,9 @@
     android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/home_container_lly"
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
 
         <com.funguide.funshopping.view.autoscrollviewpager.AutoScrollViewPager
             android:id="@+id/home_ad_viewpager"
@@ -32,9 +31,16 @@
             <android.support.v4.view.ViewPager android:id="@+id/view_pager"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-             />
+                />
         </LinearLayout>
+        
+        <LinearLayout
+            android:layout_marginTop="7dp"
+            android:id="@+id/home_container_lly"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
     </LinearLayout>
-
 
 </com.funguide.funshopping.view.FunScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment_tools_content_lly"
+    android:orientation="vertical"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tool"
+        android:textColor="#212121"
+        android:textSize="30px"/>
+
+    <TextView
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="14px"
+        style="@style/division_line"/>
+
+    <RelativeLayout
+        android:layout_gravity="center_horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal">
+            <ImageButton
+                android:id="@+id/fragment_home_tools_gonglue_ibt"
+                android:src="@drawable/btn_gonglue"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginRight="15dp"
+                android:background="@null"
+                android:layout_height="wrap_content"/>
+            <ImageButton
+                android:id="@+id/fragment_home_tools_xingcheng_ibt"
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:layout_marginLeft="15dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_xingcheng"/>
+        </LinearLayout>
+        <ImageButton
+            android:id="@+id/fragment_home_tools_qianzheng_ibt"
+            android:layout_centerInParent="true"
+            android:src="@drawable/btn_qianzheng"
+            android:background="@null"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_marginTop="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/fragment_home_tools_zhangdan_ibt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_qianzheng"/>
+
+        <ImageButton
+            android:id="@+id/fragment_home_tools_paima_ibt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:scaleType="fitCenter"
+            android:src="@drawable/btn_qianzheng"/>
+
+        <ImageButton
+            android:id="@+id/fragment_home_tools_jifen_ibt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/btn_qianzheng"/>
+
+        <ImageButton
+            android:id="@+id/fragment_home_tools_fenxiang_ibt"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
+            android:background="@null"
+            android:src="@drawable/btn_qianzheng"/>
+    </LinearLayout>
+
+</LinearLayout>

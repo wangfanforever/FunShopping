@@ -70,7 +70,9 @@ public class HomeFragment extends BaseFragment {
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initBinner();
+        initToolsLayout();
     }
+
 
     /* 初始化广告 */
     private void initBinner(){
@@ -81,7 +83,7 @@ public class HomeFragment extends BaseFragment {
         for (int i = 0 ; i < img_path.length; i++){
             Uri uri = Uri.parse(img_path[i]);
             SimpleDraweeView draweeView = new SimpleDraweeView(getActivity());
-            DraweeViewHelper.configDraweeView(getActivity(), uri , draweeView);
+            DraweeViewHelper.configDraweeView(getActivity(), uri, draweeView);
             draweeView.setId(i);
             adPicViews.add(draweeView);
         }
@@ -92,6 +94,11 @@ public class HomeFragment extends BaseFragment {
         adViewPager.setCycle(true);
         adViewPager.setSlideBorderMode(AutoScrollViewPager.SLIDE_BORDER_MODE_CYCLE);
         adViewPager.setAdapter(funAdViewPagerAdpter);
+    }
+
+    private void initToolsLayout() {
+        View view = LayoutInflater.from(getActivity()).inflate(R.layout.fragment_home_tools_view, null);
+        homeLayoutContainer.addView(view);
     }
 
     @Override
